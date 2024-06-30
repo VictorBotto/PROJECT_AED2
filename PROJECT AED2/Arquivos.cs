@@ -43,5 +43,10 @@ namespace EditorDeTexto
                 }
             }
         }
+        // Método para criar um novo arquivo de texto vazio
+        public void CriarNovoArquivo(string caminho)
+        {
+            File.WriteAllText(caminho, string.Empty);
+        }
     }
 }

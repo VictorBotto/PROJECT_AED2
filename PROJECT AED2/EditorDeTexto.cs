@@ -56,5 +56,23 @@ namespace EditorDeTexto
                 }
             }
         }
+
+        // Método público para adicionar uma nova palavra ao dicionário
+        public void AdicionarPalavra(string palavra)
+        {
+            dicionario.Adicionar(palavra); // Adiciona a palavra à tabela hash
+        }
+
+        // Método público para remover uma palavra do dicionário
+        public void RemoverPalavra(string palavra)
+        {
+            dicionario.Remover(palavra); // Remove a palavra da tabela hash
+        }
+
+        // Método público para criar um novo arquivo
+        public void CriarNovoArquivo(string caminho)
+        {
+            arquivos.CriarNovoArquivo(caminho); // Cria um novo arquivo
+        }
     }
 }
