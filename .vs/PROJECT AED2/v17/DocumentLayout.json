@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\project aed2\\tabelahash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|solutionrelative:project aed2\\tabelahash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\project aed2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|solutionrelative:project aed2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|e:\\visual studio ide\\project_aed2\\project_aed2\\project aed2\\no.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|solutionrelative:project aed2\\no.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|e:\\visual studio ide\\project_aed2\\project_aed2\\project aed2\\listaencadeada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|solutionrelative:project aed2\\listaencadeada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\project aed2\\editordetexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|solutionrelative:project aed2\\editordetexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\project aed2\\arquivos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|solutionrelative:project aed2\\arquivos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\project aed2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|solutionrelative:project aed2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|e:\\visual studio ide\\project_aed2\\project_aed2\\project aed2\\tabelahash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|solutionrelative:project aed2\\tabelahash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\project aed2\\no.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|solutionrelative:project aed2\\no.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\project aed2\\listaencadeada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|solutionrelative:project aed2\\listaencadeada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,37 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "No.cs",
-              "DocumentMoniker": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\PROJECT AED2\\No.cs",
-              "RelativeDocumentMoniker": "PROJECT AED2\\No.cs",
-              "ToolTip": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\PROJECT AED2\\No.cs",
-              "RelativeToolTip": "PROJECT AED2\\No.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T17:01:16.934Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TabelaHash.cs",
-              "DocumentMoniker": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\PROJECT AED2\\TabelaHash.cs",
-              "RelativeDocumentMoniker": "PROJECT AED2\\TabelaHash.cs",
-              "ToolTip": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\PROJECT AED2\\TabelaHash.cs",
-              "RelativeToolTip": "PROJECT AED2\\TabelaHash.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T16:31:52.434Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "ListaEncadeada.cs",
               "DocumentMoniker": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\PROJECT AED2\\ListaEncadeada.cs",
               "RelativeDocumentMoniker": "PROJECT AED2\\ListaEncadeada.cs",
@@ -73,17 +47,17 @@
               "ViewState": "AQIAAA0AAAAAAAAAAAAUwDUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-30T16:31:32.39Z",
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Arquivos.cs",
               "DocumentMoniker": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\PROJECT AED2\\Arquivos.cs",
               "RelativeDocumentMoniker": "PROJECT AED2\\Arquivos.cs",
               "ToolTip": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\PROJECT AED2\\Arquivos.cs",
               "RelativeToolTip": "PROJECT AED2\\Arquivos.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAgwDMAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-30T16:27:08.476Z",
               "EditorCaption": ""
@@ -91,25 +65,50 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "No.cs",
+              "DocumentMoniker": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\PROJECT AED2\\No.cs",
+              "RelativeDocumentMoniker": "PROJECT AED2\\No.cs",
+              "ToolTip": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\PROJECT AED2\\No.cs",
+              "RelativeToolTip": "PROJECT AED2\\No.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-30T17:01:16.934Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TabelaHash.cs",
+              "DocumentMoniker": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\PROJECT AED2\\TabelaHash.cs",
+              "RelativeDocumentMoniker": "PROJECT AED2\\TabelaHash.cs",
+              "ToolTip": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\PROJECT AED2\\TabelaHash.cs",
+              "RelativeToolTip": "PROJECT AED2\\TabelaHash.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwCoAAABmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-30T16:31:52.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "EditorDeTexto.cs",
               "DocumentMoniker": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\PROJECT AED2\\EditorDeTexto.cs",
               "RelativeDocumentMoniker": "PROJECT AED2\\EditorDeTexto.cs",
               "ToolTip": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\PROJECT AED2\\EditorDeTexto.cs",
               "RelativeToolTip": "PROJECT AED2\\EditorDeTexto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABGAAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAkwC8AAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-30T16:25:37.28Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\PROJECT AED2\\Program.cs",
               "RelativeDocumentMoniker": "PROJECT AED2\\Program.cs",
               "ToolTip": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT_AED2\\PROJECT AED2\\Program.cs",
               "RelativeToolTip": "PROJECT AED2\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAYAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-30T16:25:05.916Z",
               "EditorCaption": ""

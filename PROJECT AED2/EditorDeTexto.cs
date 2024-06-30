@@ -43,6 +43,11 @@ namespace EditorDeTexto
         // Método público para salvar conteúdo no arquivo atualmente aberto
         public void SalvarArquivo(string conteudo)
         {
+            if (string.IsNullOrEmpty(caminhoArquivo))
+            {
+                throw new InvalidOperationException("Nenhum arquivo aberto para salvar.");  // Lança uma exceção se nenhum arquivo estiver aberto
+            }
+
             arquivos.SalvarArquivo(caminhoArquivo, conteudo);  // Salva o conteúdo no arquivo
         }
 

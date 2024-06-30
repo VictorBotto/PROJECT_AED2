@@ -22,7 +22,7 @@ namespace EditorDeTexto
         private int GetHash(string palavra)
         {
             int hash = 0;
-            foreach (char c in palavra.ToLower())  // Para cada caractere da palavra em minúsculas
+            foreach (char c in palavra.ToLower())  // transforma cada caractere da palavra em minúsculas
             {
                 hash += c;  // Adiciona o valor ASCII do caractere ao hash
             }

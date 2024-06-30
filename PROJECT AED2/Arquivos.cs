@@ -14,10 +14,13 @@ namespace EditorDeTexto
             return string.Empty;  // Retorna uma string vazia se o arquivo não existir
         }
 
-        // Salva o conteúdo em um arquivo especificado
+        // Salva o conteúdo em um arquivo, adicionando ao conteúdo existente
         public void SalvarArquivo(string caminho, string conteudo)
         {
-            File.WriteAllText(caminho, conteudo);  // Escreve o conteúdo no arquivo, substituindo qualquer conteúdo existente
+            using (StreamWriter writer = new StreamWriter(caminho, true))  // Abre um StreamWriter para escrever no arquivo (true para adicionar ao final)
+            {
+                writer.WriteLine(conteudo);  // Escreve o conteúdo no arquivo, adicionando ao final
+            }
         }
 
         // Carrega todas as linhas de um arquivo como um array de strings
@@ -30,10 +33,10 @@ namespace EditorDeTexto
             return new string[0];  // Retorna um array vazio se o arquivo não existir
         }
 
-        // Salva o dicionário (TabelaHash) em um arquivo
+        // Salva o dicionário (TabelaHash) em um arquivo, adicionando novas palavras ao conteúdo existente
         public void SalvarDicionario(string caminho, TabelaHash dicionario)
         {
-            using (StreamWriter writer = new StreamWriter(caminho))  // Abre um StreamWriter para escrever no arquivo
+            using (StreamWriter writer = new StreamWriter(caminho, true))  // Abre um StreamWriter para escrever no arquivo (true para adicionar ao final)
             {
                 for (int i = 0; i < 100; i++)  // Presume que o dicionário tem 100 listas encadeadas
                 {
