@@ -19,15 +19,14 @@ namespace EditorDeTexto
         // Método para calcular o hash de uma palavra
         private int GetHash(string palavra)
         {
-            const int primo = 31; // Número primo para a função de hash
             int hash = 0;
 
             foreach (char c in palavra.ToLower()) // Converte a palavra para minúsculas
             {
-                hash = hash * primo + c; // Calcula o hash acumulando os valores ASCII dos caracteres
+                hash += c; // Acumula os valores ASCII dos caracteres
             }
 
-            return Math.Abs(hash % Tamanho); // Retorna o hash modulado pelo tamanho da tabela
+            return Math.Abs(hash % Tamanho); // Retorna o valor absoluto do módulo do hash pelo tamanho da tabela(usa Math.Abs para garantir que seja um valor positivo.
         }
 
         // Método para adicionar uma palavra à tabela hash

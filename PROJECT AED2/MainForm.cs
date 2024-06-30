@@ -130,5 +130,17 @@ namespace EditorDeTexto
             base.OnFormClosing(e);
             editorDeTexto.SalvarDicionario("dictionary.txt");
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // MainForm
+            // 
+            this.ClientSize = new System.Drawing.Size(563, 346);
+            this.Name = "MainForm";
+            this.ResumeLayout(false);
+
+        }
     }
 }

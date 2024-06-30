@@ -29,3 +29,13 @@ E:\VISUAL STUDIO IDE\PROJECT_AED2\PROJECT AED2\obj\Debug\PROJECT AED2.csproj.Gen
 E:\VISUAL STUDIO IDE\PROJECT_AED2\PROJECT AED2\obj\Debug\PROJECT AED2.csproj.CoreCompileInputs.cache
 E:\VISUAL STUDIO IDE\PROJECT_AED2\PROJECT AED2\obj\Debug\PROJECT AED2.exe
 E:\VISUAL STUDIO IDE\PROJECT_AED2\PROJECT AED2\obj\Debug\PROJECT AED2.pdb
+D:\visual studio\codes\Editor de Texto AED2\Editor de Texto AED2\PROJECT_AED2\PROJECT AED2\bin\Debug\PROJECT AED2.exe.config
+D:\visual studio\codes\Editor de Texto AED2\Editor de Texto AED2\PROJECT_AED2\PROJECT AED2\bin\Debug\PROJECT AED2.exe
+D:\visual studio\codes\Editor de Texto AED2\Editor de Texto AED2\PROJECT_AED2\PROJECT AED2\bin\Debug\PROJECT AED2.pdb
+D:\visual studio\codes\Editor de Texto AED2\Editor de Texto AED2\PROJECT_AED2\PROJECT AED2\obj\Debug\PROJECT AED2.csproj.AssemblyReference.cache
+D:\visual studio\codes\Editor de Texto AED2\Editor de Texto AED2\PROJECT_AED2\PROJECT AED2\obj\Debug\EditorDeTexto.MainForm.resources
+D:\visual studio\codes\Editor de Texto AED2\Editor de Texto AED2\PROJECT_AED2\PROJECT AED2\obj\Debug\PROJECT_AED2.Properties.Resources.resources
+D:\visual studio\codes\Editor de Texto AED2\Editor de Texto AED2\PROJECT_AED2\PROJECT AED2\obj\Debug\PROJECT AED2.csproj.GenerateResource.cache
+D:\visual studio\codes\Editor de Texto AED2\Editor de Texto AED2\PROJECT_AED2\PROJECT AED2\obj\Debug\PROJECT AED2.csproj.CoreCompileInputs.cache
+D:\visual studio\codes\Editor de Texto AED2\Editor de Texto AED2\PROJECT_AED2\PROJECT AED2\obj\Debug\PROJECT AED2.exe
+D:\visual studio\codes\Editor de Texto AED2\Editor de Texto AED2\PROJECT_AED2\PROJECT AED2\obj\Debug\PROJECT AED2.pdb

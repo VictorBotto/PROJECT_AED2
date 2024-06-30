@@ -10,3 +10,7 @@ Brincar
 Deitado
 Chocalho
 Abraçar
+Deitado
+Chocalho
+Brincar
+Abraçar

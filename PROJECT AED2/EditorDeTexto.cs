@@ -47,7 +47,8 @@ namespace EditorDeTexto
         {
             if (string.IsNullOrEmpty(caminhoArquivo))
             {
-                throw new InvalidOperationException("Nenhum arquivo aberto para salvar.");  // Lança uma exceção se nenhum arquivo estiver aberto
+                MessageBox.Show("Nenhum arquivo aberto para salvar.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;  // Retorna sem lançar uma exceção
             }
 
             // Verifica se a palavra já existe no conteúdo atual do arquivo
@@ -57,7 +58,7 @@ namespace EditorDeTexto
             {
                 if (Array.Exists(palavrasAtuais, p => p.Equals(palavra, StringComparison.OrdinalIgnoreCase)))
                 {
-                    MessageBox.Show($"A palavra '{palavra}' já existe no arquivo.", "Palavra Existente", MessageBoxButtons.OK, MessageBoxIcon.Information); //Mensagem na tela com informe de arquivo existente.
+                    MessageBox.Show($"A palavra '{palavra}' já existe no arquivo.", "Palavra Existente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return; // Retorna sem salvar se encontrar uma palavra repetida
                 }
             }
