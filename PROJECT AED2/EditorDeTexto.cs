@@ -48,6 +48,18 @@ namespace EditorDeTexto
                 throw new InvalidOperationException("Nenhum arquivo aberto para salvar.");  // Lança uma exceção se nenhum arquivo estiver aberto
             }
 
+            // Verifica se a palavra já existe no conteúdo atual do arquivo
+            string conteudoAtual = arquivos.CarregarArquivo(caminhoArquivo);
+            string[] palavrasAtuais = conteudoAtual.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (string palavra in conteudo.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                if (Array.Exists(palavrasAtuais, p => p.Equals(palavra, StringComparison.OrdinalIgnoreCase)))
+                {
+                    MessageBox.Show($"A palavra '{palavra}' já existe no arquivo.", "Palavra Existente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return; // Retorna sem salvar se encontrar uma palavra repetida
+                }
+            }
+
             arquivos.SalvarArquivo(caminhoArquivo, conteudo);  // Salva o conteúdo no arquivo
         }
 
