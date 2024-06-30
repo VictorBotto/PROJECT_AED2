@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace EditorDeTexto
@@ -6,10 +7,11 @@ namespace EditorDeTexto
     public class MainForm : Form
     {
         private TextBox textBox;
-        private Button openButton;
-        private Button saveButton;
-        private Button validateButton;
-        private EditorDeTexto EditorDeTexto;
+        private Button openButton; // abrir arquivo de dicionario
+        private Button saveButton; //botão para salvar palavras escritas
+        private Button validateButton; //botão para validar palavras escritas
+        private Button newDictionaryButton; //botão para criar novo dicionário
+        private EditorDeTexto EditorDeTexto; //botão para editar dicionário selecionado
 
         public MainForm()
         {
@@ -23,7 +25,7 @@ namespace EditorDeTexto
 
             openButton = new Button
             {
-                Text = "Abrir",
+                Text = "Abrir Dicionário",
                 Dock = DockStyle.Top
             };
             openButton.Click += OpenButton_Click;
@@ -42,10 +44,18 @@ namespace EditorDeTexto
             };
             validateButton.Click += ValidateButton_Click;
 
+            newDictionaryButton = new Button // Botão para criar novo dicionário
+            {
+                Text = "Novo Dicionário",
+                Dock = DockStyle.Top
+            };
+            newDictionaryButton.Click += NewDictionaryButton_Click;
+
             Controls.Add(textBox);
             Controls.Add(openButton);
             Controls.Add(saveButton);
             Controls.Add(validateButton);
+            Controls.Add(newDictionaryButton); // Adiciona o novo botão à interface
         }
 
         private void OpenButton_Click(object sender, EventArgs e)
@@ -60,12 +70,45 @@ namespace EditorDeTexto
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            EditorDeTexto.SalvarArquivo(textBox.Text);
+            try
+            {
+                EditorDeTexto.SalvarArquivo(textBox.Text);
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Erro ao Salvar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void ValidateButton_Click(object sender, EventArgs e)
         {
             EditorDeTexto.ValidarTexto(textBox.Text);
+        }
+
+        private void NewDictionaryButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Arquivos de Texto|*.txt";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string novoCaminho = saveFileDialog.FileName;
+                CriarNovoDicionario(novoCaminho);
+            }
+        }
+
+        private void CriarNovoDicionario(string caminho)
+        {
+            // Cria um novo arquivo de texto vazio
+            using (StreamWriter writer = File.CreateText(caminho))
+            {
+                // Escreve um conteúdo inicial opcional, se necessário
+            }
+
+            // Atualiza o EditorDeTexto com o novo arquivo
+            EditorDeTexto = new EditorDeTexto(caminho);
+
+            // Limpa o textBox, se desejado
+            textBox.Text = string.Empty;
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)

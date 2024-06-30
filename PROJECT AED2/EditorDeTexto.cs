@@ -3,6 +3,8 @@ using System.Windows.Forms;
 
 namespace EditorDeTexto
 {
+    //Anotacoes: MessageBox.Show usado para exibir uma mensagem na tela.
+
     public class EditorDeTexto
     {
         private TabelaHash dicionario;  // Estrutura de dados para armazenar palavras do dicionário
@@ -55,7 +57,7 @@ namespace EditorDeTexto
             {
                 if (Array.Exists(palavrasAtuais, p => p.Equals(palavra, StringComparison.OrdinalIgnoreCase)))
                 {
-                    MessageBox.Show($"A palavra '{palavra}' já existe no arquivo.", "Palavra Existente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"A palavra '{palavra}' já existe no arquivo.", "Palavra Existente", MessageBoxButtons.OK, MessageBoxIcon.Information); //Mensagem na tela com informe de arquivo existente.
                     return; // Retorna sem salvar se encontrar uma palavra repetida
                 }
             }
