@@ -4,20 +4,6 @@ namespace EditorDeTexto
 {
     public class TabelaHash
     {
-<<<<<<< Updated upstream
-        private const int Tamanho = 100;
-        private ListaEncadeada[] tabela;
-
-        public TabelaHash()
-        {
-            tabela = new ListaEncadeada[Tamanho];
-            for (int i = 0; i < Tamanho; i++)
-            {
-                tabela[i] = new ListaEncadeada();
-            }
-        }
-
-=======
         private const int Tamanho = 100; // Define o tamanho da tabela hash
         private ListaEncadeada[] tabela; // Array de listas encadeadas para armazenar as palavras
 
@@ -31,35 +17,10 @@ namespace EditorDeTexto
         }
 
         // Método para calcular o hash de uma palavra
->>>>>>> Stashed changes
         private int GetHash(string palavra)
         {
             const int primo = 31; // Número primo para a função de hash
             int hash = 0;
-<<<<<<< Updated upstream
-            foreach (char c in palavra.ToLower())
-            {
-                hash += c;
-            }
-            return hash % Tamanho;
-        }
-
-        public void Adicionar(string palavra)
-        {
-            int index = GetHash(palavra);
-            tabela[index].Add(palavra);
-        }
-
-        public bool Contains(string palavra)
-        {
-            int index = GetHash(palavra);
-            return tabela[index].Contains(palavra);
-        }
-
-        public ListaEncadeada GetListaEncadeadaAt(int index)
-        {
-            return tabela[index];
-=======
 
             foreach (char c in palavra.ToLower()) // Converte a palavra para minúsculas
             {
@@ -97,7 +58,6 @@ namespace EditorDeTexto
         public ListaEncadeada GetListaEncadeadaAt(int index)
         {
             return tabela[index]; // Retorna a lista encadeada no índice especificado
->>>>>>> Stashed changes
         }
     }
 }

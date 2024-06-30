@@ -1,33 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\mugiw\\OneDrive\\Documentos\\GitHub\\PROJECT_AED2\\",
+  "WorkspaceRootPath": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|C:\\Users\\mugiw\\OneDrive\\Documentos\\GitHub\\PROJECT_AED2\\project aed2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|solutionrelative:project aed2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|c:\\users\\mugiw\\onedrive\\documentos\\github\\project_aed2\\project aed2\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|solutionrelative:project aed2\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|C:\\Users\\mugiw\\OneDrive\\Documentos\\GitHub\\PROJECT_AED2\\project aed2\\tabelahash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|solutionrelative:project aed2\\tabelahash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|C:\\Users\\mugiw\\OneDrive\\Documentos\\GitHub\\PROJECT_AED2\\project aed2\\editordetexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|solutionrelative:project aed2\\editordetexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|C:\\Users\\mugiw\\OneDrive\\Documentos\\GitHub\\PROJECT_AED2\\project aed2\\listaencadeada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\project aed2\\listaencadeada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|solutionrelative:project aed2\\listaencadeada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|C:\\Users\\mugiw\\OneDrive\\Documentos\\GitHub\\PROJECT_AED2\\project aed2\\arquivos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\project aed2\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|solutionrelative:project aed2\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\project aed2\\editordetexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|solutionrelative:project aed2\\editordetexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\project aed2\\tabelahash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|solutionrelative:project aed2\\tabelahash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|e:\\visual studio ide\\project_aed2\\project aed2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|solutionrelative:project aed2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\project aed2\\arquivos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|solutionrelative:project aed2\\arquivos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|C:\\Users\\mugiw\\OneDrive\\Documentos\\GitHub\\PROJECT_AED2\\project aed2\\no.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\project aed2\\no.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{92FF2741-7012-4910-B029-978C19591EBB}|PROJECT AED2\\PROJECT AED2.csproj|solutionrelative:project aed2\\no.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -38,32 +38,29 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "ListaEncadeada.cs",
-              "DocumentMoniker": "C:\\Users\\mugiw\\OneDrive\\Documentos\\GitHub\\PROJECT_AED2\\PROJECT AED2\\ListaEncadeada.cs",
+              "DocumentMoniker": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT AED2\\ListaEncadeada.cs",
               "RelativeDocumentMoniker": "PROJECT AED2\\ListaEncadeada.cs",
-              "ToolTip": "C:\\Users\\mugiw\\OneDrive\\Documentos\\GitHub\\PROJECT_AED2\\PROJECT AED2\\ListaEncadeada.cs",
+              "ToolTip": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT AED2\\ListaEncadeada.cs",
               "RelativeToolTip": "PROJECT AED2\\ListaEncadeada.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAAwwDoAAAAVAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-30T16:31:32.39Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MainForm.cs",
-              "DocumentMoniker": "C:\\Users\\mugiw\\OneDrive\\Documentos\\GitHub\\PROJECT_AED2\\PROJECT AED2\\MainForm.cs",
+              "DocumentMoniker": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT AED2\\MainForm.cs",
               "RelativeDocumentMoniker": "PROJECT AED2\\MainForm.cs",
-              "ToolTip": "C:\\Users\\mugiw\\OneDrive\\Documentos\\GitHub\\PROJECT_AED2\\PROJECT AED2\\MainForm.cs",
+              "ToolTip": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT AED2\\MainForm.cs",
               "RelativeToolTip": "PROJECT AED2\\MainForm.cs",
               "ViewState": "AQIAAGcAAAAAAAAAAAAcwHkAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -72,23 +69,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "EditorDeTexto.cs",
-              "DocumentMoniker": "C:\\Users\\mugiw\\OneDrive\\Documentos\\GitHub\\PROJECT_AED2\\PROJECT AED2\\EditorDeTexto.cs",
+              "DocumentMoniker": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT AED2\\EditorDeTexto.cs",
               "RelativeDocumentMoniker": "PROJECT AED2\\EditorDeTexto.cs",
-              "ToolTip": "C:\\Users\\mugiw\\OneDrive\\Documentos\\GitHub\\PROJECT_AED2\\PROJECT AED2\\EditorDeTexto.cs",
+              "ToolTip": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT AED2\\EditorDeTexto.cs",
               "RelativeToolTip": "PROJECT AED2\\EditorDeTexto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAABVAAAA",
+              "ViewState": "AQIAACAAAAAAAAAAAAAxwG0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T16:25:37.28Z"
+              "WhenOpened": "2024-06-30T16:25:37.28Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Arquivos.cs",
-              "DocumentMoniker": "C:\\Users\\mugiw\\OneDrive\\Documentos\\GitHub\\PROJECT_AED2\\PROJECT AED2\\Arquivos.cs",
+              "DocumentMoniker": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT AED2\\Arquivos.cs",
               "RelativeDocumentMoniker": "PROJECT AED2\\Arquivos.cs",
-              "ToolTip": "C:\\Users\\mugiw\\OneDrive\\Documentos\\GitHub\\PROJECT_AED2\\PROJECT AED2\\Arquivos.cs",
+              "ToolTip": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT AED2\\Arquivos.cs",
               "RelativeToolTip": "PROJECT AED2\\Arquivos.cs",
               "ViewState": "AQIAAB0AAAAAAAAAAAAgwDUAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -98,9 +96,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "No.cs",
-              "DocumentMoniker": "C:\\Users\\mugiw\\OneDrive\\Documentos\\GitHub\\PROJECT_AED2\\PROJECT AED2\\No.cs",
+              "DocumentMoniker": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT AED2\\No.cs",
               "RelativeDocumentMoniker": "PROJECT AED2\\No.cs",
-              "ToolTip": "C:\\Users\\mugiw\\OneDrive\\Documentos\\GitHub\\PROJECT_AED2\\PROJECT AED2\\No.cs",
+              "ToolTip": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT AED2\\No.cs",
               "RelativeToolTip": "PROJECT AED2\\No.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -108,23 +106,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "TabelaHash.cs",
-              "DocumentMoniker": "C:\\Users\\mugiw\\OneDrive\\Documentos\\GitHub\\PROJECT_AED2\\PROJECT AED2\\TabelaHash.cs",
+              "DocumentMoniker": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT AED2\\TabelaHash.cs",
               "RelativeDocumentMoniker": "PROJECT AED2\\TabelaHash.cs",
-              "ToolTip": "C:\\Users\\mugiw\\OneDrive\\Documentos\\GitHub\\PROJECT_AED2\\PROJECT AED2\\TabelaHash.cs",
+              "ToolTip": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT AED2\\TabelaHash.cs",
               "RelativeToolTip": "PROJECT AED2\\TabelaHash.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAwwC0AAABSAAAA",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAkwD8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T16:31:52.434Z"
+              "WhenOpened": "2024-06-30T16:31:52.434Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\mugiw\\OneDrive\\Documentos\\GitHub\\PROJECT_AED2\\PROJECT AED2\\Program.cs",
+              "DocumentMoniker": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT AED2\\Program.cs",
               "RelativeDocumentMoniker": "PROJECT AED2\\Program.cs",
-              "ToolTip": "C:\\Users\\mugiw\\OneDrive\\Documentos\\GitHub\\PROJECT_AED2\\PROJECT AED2\\Program.cs",
+              "ToolTip": "E:\\VISUAL STUDIO IDE\\PROJECT_AED2\\PROJECT AED2\\Program.cs",
               "RelativeToolTip": "PROJECT AED2\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

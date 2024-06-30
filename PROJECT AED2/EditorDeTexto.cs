@@ -23,9 +23,9 @@ namespace EditorDeTexto
         private void CarregarDicionario(string caminhoDicionario)
         {
             string[] palavras = arquivos.CarregarDicionario(caminhoDicionario);  // Carrega as palavras do arquivo
-            foreach (string word in palavras)  // Para cada palavra carregada
+            foreach (string palavra in palavras)  // Para cada palavra carregada
             {
-                dicionario.Adicionar(word.Trim());  // Adiciona a palavra ao dicionário, removendo espaços em branco nas extremidades
+                dicionario.Adicionar(palavra.Trim());  // Adiciona a palavra ao dicionário, removendo espaços em branco nas extremidades
             }
         }
 
@@ -98,6 +98,12 @@ namespace EditorDeTexto
         public void CriarNovoArquivo(string caminho)
         {
             arquivos.CriarNovoArquivo(caminho); // Cria um novo arquivo
+        }
+
+        // Método público para obter o conteúdo atual do editor de texto
+        public string ObterConteudo()
+        {
+            return arquivos.CarregarArquivo(caminhoArquivo); // Retorna o conteúdo do arquivo atualmente aberto
         }
     }
 }

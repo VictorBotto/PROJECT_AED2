@@ -2,49 +2,13 @@ namespace EditorDeTexto
 {
     public class ListaEncadeada
     {
-<<<<<<< Updated upstream
-        private No cabeca;
-=======
         private No cabeca; // Referência para o primeiro nó da lista encadeada
->>>>>>> Stashed changes
 
         public ListaEncadeada()
         {
             cabeca = null; // Inicializa a cabeça da lista como nula
         }
 
-<<<<<<< Updated upstream
-        public void AdicionarPalavra(string palavra)
-        {
-            No no = new No(palavra);
-            if (cabeca == null)
-            {
-                cabeca = no;
-            }
-            else
-            {
-                No atual = cabeca;
-                while (atual.Next != null)
-                {
-                    atual = atual.Next;
-                }
-                atual.Next = no;
-            }
-        }
-
-        public bool Contains(string palavra)
-        {
-            No atual = Cabeca;
-            while (atual != null)
-            {
-                if (atual.Palavra.Equals(palavra, System.StringComparison.OrdinalIgnoreCase))
-                {
-                    return true;
-                }
-                atual = atual.Next;
-            }
-            return false;
-=======
         // Método para adicionar uma nova palavra à lista encadeada
         public void AdicionarPalavra(string palavra)
         {
@@ -102,12 +66,11 @@ namespace EditorDeTexto
                 anterior = atual; // Atualiza o nó anterior
                 atual = atual.Next; // Avança para o próximo nó
             }
->>>>>>> Stashed changes
         }
 
         public No Cabeca
         {
-            get { return Cabeca; }
+            get { return cabeca; } // Retorna a cabeça da lista
         }
     }
 }
