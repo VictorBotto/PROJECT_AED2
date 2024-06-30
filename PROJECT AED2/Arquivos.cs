@@ -33,7 +33,7 @@ namespace EditorDeTexto
             {
                 for (int i = 0; i < 100; i++)
                 {
-                    ListaEncadeada list = dictionary.GetListaEncadeadaAt(i);
+                    ListaEncadeada list = dicionario.GetListaEncadeadaAt(i);
                     No atual = list.Cabeca;
                     while (atual != null)
                     {

@@ -9,41 +9,41 @@ namespace EditorDeTexto
         private Arquivos arquivos;
         private string caminhoArquivo;
 
-        public TextEditor(string caminhoDicionario)
+        public EditorDeTexto(string caminhoDicionario)
         {
             dicionario = new TabelaHash();
             arquivos = new Arquivos();
-            CarregarDicionario(dicionarioPath);
+            CarregarDicionario(caminhoDicionario);
         }
 
         private void CarregarDicionario(string caminhoDicionario)
         {
-            string[] palavras = fileManager.Loaddicionario(caminho);
+            string[] palavras = arquivos.CarregarDicionario(caminhoDicionario);
             foreach (string word in palavras)
             {
-                dicionario.Add(word.Trim());
+                dicionario.Adicionar(word.Trim());
             }
         }
 
         public void SalvarDicionario(string caminho)
         {
-            Arquivos.SalvarDicionario(caminho, dicionario);
+            arquivos.SalvarDicionario(caminho, dicionario);
         }
 
         public string AbrirArquivo(string caminho)
         {
             caminhoArquivo = caminho;
-            return fileManager.LoadFile(caminhoArquivo);
+            return arquivos.CarregarArquivo(caminhoArquivo);
         }
 
         public void SalvarArquivo(string conteudo)
         {
-            fileManager.SaveFile(caminhoArquivo, conteudo);
+            arquivos.SalvarArquivo(caminhoArquivo, conteudo);
         }
 
         public void ValidarTexto(string texto)
         {
-            string[] palavras = text.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] palavras = texto.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
             foreach (string palavra in palavras)
             {
                 if (!dicionario.Contains(palavra))
@@ -51,7 +51,7 @@ namespace EditorDeTexto
                     DialogResult result = MessageBox.Show($"A palavra '{palavra}' não está no dicionário. Deseja adicioná-la?", "Adicionar Palavra", MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
-                        dicionario.Add(word);
+                        dicionario.Adicionar(palavra);
                     }
                 }
             }

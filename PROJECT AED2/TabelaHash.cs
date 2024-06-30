@@ -27,7 +27,7 @@ namespace EditorDeTexto
         public void Adicionar(string palavra)
         {
             int index = GetHash(palavra);
-            tabela[index].Add(palavra);
+            tabela[index].AdicionarPalavra(palavra);
         }
 
         public bool Contains(string palavra)
