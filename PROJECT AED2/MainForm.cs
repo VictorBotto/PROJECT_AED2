@@ -1,5 +1,4 @@
 using System;
-using System.IO;
 using System.Windows.Forms;
 
 namespace EditorDeTexto
@@ -7,15 +6,17 @@ namespace EditorDeTexto
     public class MainForm : Form
     {
         private TextBox textBox;
-        private Button openButton; // abrir arquivo de dicionario
-        private Button saveButton; //botão para salvar palavras escritas
-        private Button validateButton; //botão para validar palavras escritas
-        private Button newDictionaryButton; //botão para criar novo dicionário
-        private EditorDeTexto EditorDeTexto; //botão para editar dicionário selecionado
+        private Button openButton;
+        private Button saveButton;
+        private Button validateButton;
+        private Button newWordButton;
+        private Button removeWordButton;
+        private Button newFileButton;
+        private EditorDeTexto editorDeTexto;
 
         public MainForm()
         {
-            EditorDeTexto = new EditorDeTexto("dictionary.txt");
+            editorDeTexto = new EditorDeTexto("dictionary.txt");
 
             textBox = new TextBox
             {
@@ -25,37 +26,55 @@ namespace EditorDeTexto
 
             openButton = new Button
             {
-                Text = "Abrir Dicionário",
-                Dock = DockStyle.Top
+                Text = "Abrir"
             };
             openButton.Click += OpenButton_Click;
 
             saveButton = new Button
             {
-                Text = "Salvar",
-                Dock = DockStyle.Top
+                Text = "Salvar"
             };
             saveButton.Click += SaveButton_Click;
 
             validateButton = new Button
             {
-                Text = "Validar",
-                Dock = DockStyle.Top
+                Text = "Validar"
             };
             validateButton.Click += ValidateButton_Click;
 
-            newDictionaryButton = new Button // Botão para criar novo dicionário
+            newWordButton = new Button
             {
-                Text = "Novo Dicionário",
-                Dock = DockStyle.Top
+                Text = "Adicionar Palavra"
             };
-            newDictionaryButton.Click += NewDictionaryButton_Click;
+            newWordButton.Click += NewWordButton_Click;
 
-            Controls.Add(textBox);
-            Controls.Add(openButton);
-            Controls.Add(saveButton);
-            Controls.Add(validateButton);
-            Controls.Add(newDictionaryButton); // Adiciona o novo botão à interface
+            removeWordButton = new Button
+            {
+                Text = "Remover Palavra"
+            };
+            removeWordButton.Click += RemoveWordButton_Click;
+
+            newFileButton = new Button
+            {
+                Text = "Novo Arquivo"
+            };
+            newFileButton.Click += NewFileButton_Click;
+
+            FlowLayoutPanel buttonPanel = new FlowLayoutPanel
+            {
+                Dock = DockStyle.Bottom,
+                FlowDirection = FlowDirection.RightToLeft
+            };
+
+            buttonPanel.Controls.Add(openButton);
+            buttonPanel.Controls.Add(saveButton);
+            buttonPanel.Controls.Add(validateButton);
+            buttonPanel.Controls.Add(newWordButton);
+            buttonPanel.Controls.Add(removeWordButton);
+            buttonPanel.Controls.Add(newFileButton);
+
+            Controls.Add(textBox); // Adicionando o textBox ao formulário
+            Controls.Add(buttonPanel); // Adicionando o buttonPanel ao formulário
         }
 
         private void OpenButton_Click(object sender, EventArgs e)
@@ -63,58 +82,53 @@ namespace EditorDeTexto
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string conteudo = EditorDeTexto.AbrirArquivo(openFileDialog.FileName);
+                string conteudo = editorDeTexto.AbrirArquivo(openFileDialog.FileName);
                 textBox.Text = conteudo;
             }
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                EditorDeTexto.SalvarArquivo(textBox.Text);
-            }
-            catch (InvalidOperationException ex)
-            {
-                MessageBox.Show(ex.Message, "Erro ao Salvar", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            editorDeTexto.SalvarArquivo(textBox.Text);
         }
 
         private void ValidateButton_Click(object sender, EventArgs e)
         {
-            EditorDeTexto.ValidarTexto(textBox.Text);
+            editorDeTexto.ValidarTexto(textBox.Text);
         }
 
-        private void NewDictionaryButton_Click(object sender, EventArgs e)
+        private void NewWordButton_Click(object sender, EventArgs e)
+        {
+            string novaPalavra = Microsoft.VisualBasic.Interaction.InputBox("Digite a nova palavra:", "Adicionar Palavra", "");
+            if (!string.IsNullOrEmpty(novaPalavra))
+            {
+                editorDeTexto.AdicionarPalavra(novaPalavra);
+            }
+        }
+
+        private void RemoveWordButton_Click(object sender, EventArgs e)
+        {
+            string palavra = Microsoft.VisualBasic.Interaction.InputBox("Digite a palavra a ser removida:", "Remover Palavra", "");
+            if (!string.IsNullOrEmpty(palavra))
+            {
+                editorDeTexto.RemoverPalavra(palavra);
+            }
+        }
+
+        private void NewFileButton_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Arquivos de Texto|*.txt";
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string novoCaminho = saveFileDialog.FileName;
-                CriarNovoDicionario(novoCaminho);
+                editorDeTexto.CriarNovoArquivo(saveFileDialog.FileName);
+                textBox.Text = string.Empty;
             }
-        }
-
-        private void CriarNovoDicionario(string caminho)
-        {
-            // Cria um novo arquivo de texto vazio
-            using (StreamWriter writer = File.CreateText(caminho))
-            {
-                // Escreve um conteúdo inicial opcional, se necessário
-            }
-
-            // Atualiza o EditorDeTexto com o novo arquivo
-            EditorDeTexto = new EditorDeTexto(caminho);
-
-            // Limpa o textBox, se desejado
-            textBox.Text = string.Empty;
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
-            EditorDeTexto.SalvarDicionario("dictionary.txt");
+            editorDeTexto.SalvarDicionario("dictionary.txt");
         }
     }
 }
