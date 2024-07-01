@@ -6,13 +6,15 @@ namespace EditorDeTexto
     public class MainForm : Form
     {
         private TextBox textBox;
+        private TextBox newWordBox;
         private Button openButton;
         private Button saveButton;
         private Button validateButton;
-        private Button newWordButton;
+        private Button addWordButton;
         private Button removeWordButton;
         private Button newFileButton;
         private EditorDeTexto editorDeTexto;
+        private SplitContainer splitContainer;
 
         public MainForm()
         {
@@ -24,57 +26,100 @@ namespace EditorDeTexto
                 Dock = DockStyle.Fill
             };
 
+            newWordBox = new TextBox
+            {
+                Text = "Digite a nova palavra",
+                Dock = DockStyle.Bottom,
+                Margin = new Padding(10)
+            };
+            newWordBox.GotFocus += NewWordBox_GotFocus;
+            newWordBox.LostFocus += NewWordBox_LostFocus;
+
             openButton = new Button
             {
-                Text = "Abrir"
+                Text = "Abrir",
+                Width = 100
             };
             openButton.Click += OpenButton_Click;
 
             saveButton = new Button
             {
-                Text = "Salvar"
+                Text = "Salvar Arquivo",
+                Width = 100
             };
             saveButton.Click += SaveButton_Click;
 
             validateButton = new Button
             {
-                Text = "Validar"
+                Text = "Validar",
+                Width = 100
             };
             validateButton.Click += ValidateButton_Click;
 
-            newWordButton = new Button
+            addWordButton = new Button
             {
-                Text = "Adicionar Palavra"
+                Text = "Adicionar Palavra",
+                Width = 100
             };
-            newWordButton.Click += NewWordButton_Click;
+            addWordButton.Click += AddWordButton_Click;
 
             removeWordButton = new Button
             {
-                Text = "Remover Palavra"
+                Text = "Remover Palavra",
+                Width = 100
             };
             removeWordButton.Click += RemoveWordButton_Click;
 
             newFileButton = new Button
             {
-                Text = "Novo Arquivo"
+                Text = "Novo Arquivo",
+                Width = 100
             };
             newFileButton.Click += NewFileButton_Click;
 
             FlowLayoutPanel buttonPanel = new FlowLayoutPanel
             {
-                Dock = DockStyle.Bottom,
-                FlowDirection = FlowDirection.RightToLeft
+                Dock = DockStyle.Top,
+                FlowDirection = FlowDirection.LeftToRight,
+                AutoSize = true
             };
 
             buttonPanel.Controls.Add(openButton);
             buttonPanel.Controls.Add(saveButton);
             buttonPanel.Controls.Add(validateButton);
-            buttonPanel.Controls.Add(newWordButton);
+            buttonPanel.Controls.Add(addWordButton);
             buttonPanel.Controls.Add(removeWordButton);
             buttonPanel.Controls.Add(newFileButton);
 
-            Controls.Add(textBox); // Adicionando o textBox ao formulário
-            Controls.Add(buttonPanel); // Adicionando o buttonPanel ao formulário
+            splitContainer = new SplitContainer
+            {
+                Dock = DockStyle.Fill,
+                Orientation = Orientation.Vertical,
+                Panel1MinSize = 100,
+                Panel2MinSize = 100
+            };
+
+            splitContainer.Panel1.Controls.Add(buttonPanel);
+            splitContainer.Panel2.Controls.Add(textBox);
+            splitContainer.Panel2.Controls.Add(newWordBox);
+
+            Controls.Add(splitContainer);
+        }
+
+        private void NewWordBox_GotFocus(object sender, EventArgs e)
+        {
+            if (newWordBox.Text == "Digite a nova palavra")
+            {
+                newWordBox.Text = string.Empty;
+            }
+        }
+
+        private void NewWordBox_LostFocus(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(newWordBox.Text))
+            {
+                newWordBox.Text = "Digite a nova palavra";
+            }
         }
 
         private void OpenButton_Click(object sender, EventArgs e)
@@ -97,21 +142,39 @@ namespace EditorDeTexto
             editorDeTexto.ValidarTexto(textBox.Text);
         }
 
-        private void NewWordButton_Click(object sender, EventArgs e)
+        private void AddWordButton_Click(object sender, EventArgs e)
         {
-            string novaPalavra = Microsoft.VisualBasic.Interaction.InputBox("Digite a nova palavra:", "Adicionar Palavra", "");
+            string novaPalavra = newWordBox.Text.Trim();
             if (!string.IsNullOrEmpty(novaPalavra))
             {
-                editorDeTexto.AdicionarPalavra(novaPalavra);
+                if (!editorDeTexto.PalavraExisteNoDicionario(novaPalavra))
+                {
+                    editorDeTexto.AdicionarPalavra(novaPalavra);
+                    MessageBox.Show($"A palavra '{novaPalavra}' foi adicionada ao dicionário.", "Palavra Adicionada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    newWordBox.Text = "Digite a nova palavra";
+                }
+                else
+                {
+                    MessageBox.Show($"A palavra '{novaPalavra}' já existe no dicionário.", "Palavra Existente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
         private void RemoveWordButton_Click(object sender, EventArgs e)
         {
-            string palavra = Microsoft.VisualBasic.Interaction.InputBox("Digite a palavra a ser removida:", "Remover Palavra", "");
+            string palavra = newWordBox.Text.Trim();
             if (!string.IsNullOrEmpty(palavra))
             {
-                editorDeTexto.RemoverPalavra(palavra);
+                if (editorDeTexto.PalavraExisteNoDicionario(palavra))
+                {
+                    editorDeTexto.RemoverPalavra(palavra);
+                    MessageBox.Show($"A palavra '{palavra}' foi removida do dicionário.", "Palavra Removida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    newWordBox.Text = "Digite a nova palavra";
+                }
+                else
+                {
+                    MessageBox.Show($"A palavra '{palavra}' não existe no dicionário.", "Palavra Não Encontrada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 
@@ -129,18 +192,6 @@ namespace EditorDeTexto
         {
             base.OnFormClosing(e);
             editorDeTexto.SalvarDicionario("dictionary.txt");
-        }
-
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // MainForm
-            // 
-            this.ClientSize = new System.Drawing.Size(563, 346);
-            this.Name = "MainForm";
-            this.ResumeLayout(false);
-
         }
     }
 }

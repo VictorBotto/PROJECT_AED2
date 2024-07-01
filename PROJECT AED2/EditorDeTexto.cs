@@ -3,108 +3,89 @@ using System.Windows.Forms;
 
 namespace EditorDeTexto
 {
-    //Anotacoes: MessageBox.Show usado para exibir uma mensagem na tela.
-
     public class EditorDeTexto
     {
-        private TabelaHash dicionario;  // Estrutura de dados para armazenar palavras do dicionário
-        private Arquivos arquivos;  // Instância da classe Arquivos para manipulação de arquivos
-        private string caminhoArquivo;  // Armazena o caminho do arquivo atualmente aberto
+        private TabelaHash dicionario;
+        private Arquivos arquivos;
+        private string caminhoArquivo;
 
-        // Construtor que inicializa o dicionário e carrega o dicionário a partir de um arquivo
         public EditorDeTexto(string caminhoDicionario)
         {
-            dicionario = new TabelaHash();  // Inicializa o dicionário
-            arquivos = new Arquivos();  // Inicializa a instância de Arquivos
-            CarregarDicionario(caminhoDicionario);  // Carrega as palavras do dicionário a partir do arquivo especificado
+            dicionario = new TabelaHash();
+            arquivos = new Arquivos();
+            CarregarDicionario(caminhoDicionario);
         }
 
-        // Método privado para carregar palavras do dicionário a partir de um arquivo
         private void CarregarDicionario(string caminhoDicionario)
         {
-            string[] palavras = arquivos.CarregarDicionario(caminhoDicionario);  // Carrega as palavras do arquivo
-            foreach (string palavra in palavras)  // Para cada palavra carregada
+            string[] palavras = arquivos.CarregarDicionario(caminhoDicionario);
+            foreach (string palavra in palavras)
             {
-                dicionario.Adicionar(palavra.Trim());  // Adiciona a palavra ao dicionário, removendo espaços em branco nas extremidades
+                dicionario.Adicionar(palavra.Trim());
             }
         }
 
-        // Método público para salvar o dicionário em um arquivo
         public void SalvarDicionario(string caminho)
         {
-            arquivos.SalvarDicionario(caminho, dicionario);  // Salva o dicionário no arquivo especificado
+            arquivos.SalvarDicionario(caminho, dicionario);
         }
 
-        // Método público para abrir um arquivo e retornar seu conteúdo
         public string AbrirArquivo(string caminho)
         {
-            caminhoArquivo = caminho;  // Armazena o caminho do arquivo
-            return arquivos.CarregarArquivo(caminhoArquivo);  // Carrega e retorna o conteúdo do arquivo
+            caminhoArquivo = caminho;
+            return arquivos.CarregarArquivo(caminhoArquivo);
         }
 
-        // Método público para salvar conteúdo no arquivo atualmente aberto
         public void SalvarArquivo(string conteudo)
         {
             if (string.IsNullOrEmpty(caminhoArquivo))
             {
                 MessageBox.Show("Nenhum arquivo aberto para salvar.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;  // Retorna sem lançar uma exceção
+                return;
             }
 
-            // Verifica se a palavra já existe no conteúdo atual do arquivo
-            string conteudoAtual = arquivos.CarregarArquivo(caminhoArquivo);
-            string[] palavrasAtuais = conteudoAtual.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
-            foreach (string palavra in conteudo.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries))
-            {
-                if (Array.Exists(palavrasAtuais, p => p.Equals(palavra, StringComparison.OrdinalIgnoreCase)))
-                {
-                    MessageBox.Show($"A palavra '{palavra}' já existe no arquivo.", "Palavra Existente", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return; // Retorna sem salvar se encontrar uma palavra repetida
-                }
-            }
-
-            arquivos.SalvarArquivo(caminhoArquivo, conteudo);  // Salva o conteúdo no arquivo
+            arquivos.SalvarArquivo(caminhoArquivo, conteudo);
         }
 
-        // Método público para validar o texto, verificando se cada palavra está no dicionário
         public void ValidarTexto(string texto)
         {
-            string[] palavras = texto.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);  // Divide o texto em palavras, removendo entradas vazias
-            foreach (string palavra in palavras)  // Para cada palavra no texto
+            string[] palavras = texto.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (string palavra in palavras)
             {
-                if (!dicionario.Contains(palavra))  // Verifica se a palavra não está no dicionário
+                if (!dicionario.Contains(palavra))
                 {
-                    DialogResult result = MessageBox.Show($"A palavra '{palavra}' não está no dicionário. Deseja adicioná-la?", "Adicionar Palavra", MessageBoxButtons.YesNo);  // Exibe uma caixa de diálogo perguntando se o usuário deseja adicionar a palavra
-                    if (result == DialogResult.Yes)  // Se o usuário clicar em "Yes"
+                    DialogResult result = MessageBox.Show($"A palavra '{palavra}' não está no dicionário. Deseja adicioná-la?", "Adicionar Palavra", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
                     {
-                        dicionario.Adicionar(palavra);  // Adiciona a palavra ao dicionário
+                        dicionario.Adicionar(palavra);
                     }
                 }
             }
         }
 
-        // Método público para adicionar uma nova palavra ao dicionário
         public void AdicionarPalavra(string palavra)
         {
-            dicionario.Adicionar(palavra); // Adiciona a palavra à tabela hash
+            dicionario.Adicionar(palavra);
         }
 
-        // Método público para remover uma palavra do dicionário
         public void RemoverPalavra(string palavra)
         {
-            dicionario.Remover(palavra); // Remove a palavra da tabela hash
+            dicionario.Remover(palavra);
         }
 
-        // Método público para criar um novo arquivo
+        public bool PalavraExisteNoDicionario(string palavra)
+        {
+            return dicionario.Contains(palavra);
+        }
+
         public void CriarNovoArquivo(string caminho)
         {
-            arquivos.CriarNovoArquivo(caminho); // Cria um novo arquivo
+            arquivos.CriarNovoArquivo(caminho);
         }
 
-        // Método público para obter o conteúdo atual do editor de texto
         public string ObterConteudo()
         {
-            return arquivos.CarregarArquivo(caminhoArquivo); // Retorna o conteúdo do arquivo atualmente aberto
+            return arquivos.CarregarArquivo(caminhoArquivo);
         }
     }
 }
