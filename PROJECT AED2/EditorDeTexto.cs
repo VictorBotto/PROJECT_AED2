@@ -1,96 +1,50 @@
 using System;
-using System.Windows.Forms;
+using System.IO;
 
 namespace EditorDeTexto
 {
     public class EditorDeTexto
     {
-        private TabelaHash dicionario;
-        private Arquivos arquivos;
         private string caminhoArquivo;
+        private Dicionario dicionario;
 
         public EditorDeTexto(string caminhoDicionario)
         {
-            dicionario = new TabelaHash();
-            arquivos = new Arquivos();
-            CarregarDicionario(caminhoDicionario);
+            dicionario = new Dicionario(caminhoDicionario);
         }
 
-        private void CarregarDicionario(string caminhoDicionario)
+        public Dicionario ObterDicionario()
         {
-            string[] palavras = arquivos.CarregarDicionario(caminhoDicionario);
-            foreach (string palavra in palavras)
-            {
-                dicionario.Adicionar(palavra.Trim());
-            }
-        }
-
-        public void SalvarDicionario(string caminho)
-        {
-            string[] palavras = dicionario.ObterPalavras();
-            arquivos.SalvarDicionario(caminho, palavras);
+            return dicionario;
         }
 
         public string AbrirArquivo(string caminho)
         {
             caminhoArquivo = caminho;
-            return arquivos.CarregarArquivo(caminhoArquivo);
+            return File.ReadAllText(caminhoArquivo);
         }
 
         public void SalvarArquivo(string conteudo)
         {
-            if (string.IsNullOrEmpty(caminhoArquivo))
+            if (!string.IsNullOrEmpty(caminhoArquivo))
             {
-                MessageBox.Show("Nenhum arquivo aberto para salvar.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                File.WriteAllText(caminhoArquivo, conteudo);
             }
-
-            arquivos.SalvarArquivo(caminhoArquivo, conteudo);
-        }
-
-        public void ValidarTexto(string texto)
-        {
-            string[] palavras = texto.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
-            foreach (string palavra in palavras)
-            {
-                if (!dicionario.Contains(palavra))
-                {
-                    DialogResult result = MessageBox.Show($"A palavra '{palavra}' não está no dicionário. Deseja adicioná-la?", "Adicionar Palavra", MessageBoxButtons.YesNo);
-                    if (result == DialogResult.Yes)
-                    {
-                        dicionario.Adicionar(palavra);
-                        SalvarDicionario("dictionary.txt"); // Salva o dicionário após adicionar nova palavra
-                    }
-                }
-            }
-        }
-
-        public bool PalavraExisteNoDicionario(string palavra)
-        {
-            return dicionario.Contains(palavra);
-        }
-
-        public void AdicionarPalavra(string palavra)
-        {
-            dicionario.Adicionar(palavra);
-            SalvarDicionario("dictionary.txt"); // Salva o dicionário após adicionar nova palavra
-        }
-
-        public void RemoverPalavra(string palavra)
-        {
-            dicionario.Remover(palavra);
-            SalvarDicionario("dictionary.txt"); // Salva o dicionário após remover palavra
         }
 
         public void CriarNovoArquivo(string caminho)
         {
-            arquivos.CriarNovoArquivo(caminho);
             caminhoArquivo = caminho;
+            File.Create(caminhoArquivo).Dispose();
         }
 
         public string ObterConteudo()
         {
-            return arquivos.CarregarArquivo(caminhoArquivo);
+            if (!string.IsNullOrEmpty(caminhoArquivo))
+            {
+                return File.ReadAllText(caminhoArquivo);
+            }
+            return string.Empty;
         }
     }
 }

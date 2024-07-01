@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Arquivos.cs" />
+    <Compile Include="Dicionario.cs" />
     <Compile Include="EditorDeTexto.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
