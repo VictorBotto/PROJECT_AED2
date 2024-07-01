@@ -27,7 +27,8 @@ namespace EditorDeTexto
 
         public void SalvarDicionario(string caminho)
         {
-            arquivos.SalvarDicionario(caminho, dicionario);
+            string[] palavras = dicionario.ObterPalavras();
+            arquivos.SalvarDicionario(caminho, palavras);
         }
 
         public string AbrirArquivo(string caminho)
@@ -58,19 +59,10 @@ namespace EditorDeTexto
                     if (result == DialogResult.Yes)
                     {
                         dicionario.Adicionar(palavra);
+                        SalvarDicionario("dictionary.txt"); // Salva o dicionário após adicionar nova palavra
                     }
                 }
             }
-        }
-
-        public void AdicionarPalavra(string palavra)
-        {
-            dicionario.Adicionar(palavra);
-        }
-
-        public void RemoverPalavra(string palavra)
-        {
-            dicionario.Remover(palavra);
         }
 
         public bool PalavraExisteNoDicionario(string palavra)
@@ -78,9 +70,22 @@ namespace EditorDeTexto
             return dicionario.Contains(palavra);
         }
 
+        public void AdicionarPalavra(string palavra)
+        {
+            dicionario.Adicionar(palavra);
+            SalvarDicionario("dictionary.txt"); // Salva o dicionário após adicionar nova palavra
+        }
+
+        public void RemoverPalavra(string palavra)
+        {
+            dicionario.Remover(palavra);
+            SalvarDicionario("dictionary.txt"); // Salva o dicionário após remover palavra
+        }
+
         public void CriarNovoArquivo(string caminho)
         {
             arquivos.CriarNovoArquivo(caminho);
+            caminhoArquivo = caminho;
         }
 
         public string ObterConteudo()
