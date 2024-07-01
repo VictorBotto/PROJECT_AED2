@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace EditorDeTexto
@@ -16,6 +19,8 @@ namespace EditorDeTexto
         private EditorDeTexto editorDeTexto;
         private SplitContainer splitContainer;
 
+        private bool arquivoAberto = false;
+
         public MainForm()
         {
             editorDeTexto = new EditorDeTexto("dictionary.txt");
@@ -23,14 +28,17 @@ namespace EditorDeTexto
             textBox = new TextBox
             {
                 Multiline = true,
-                Dock = DockStyle.Fill
+                Dock = DockStyle.Fill,
+                ReadOnly = true
             };
 
             newWordBox = new TextBox
             {
                 Text = "Digite a nova palavra",
+                ForeColor = SystemColors.GrayText,
                 Dock = DockStyle.Bottom,
-                Margin = new Padding(10)
+                Margin = new Padding(10),
+                Enabled = false
             };
             newWordBox.GotFocus += NewWordBox_GotFocus;
             newWordBox.LostFocus += NewWordBox_LostFocus;
@@ -45,28 +53,32 @@ namespace EditorDeTexto
             saveButton = new Button
             {
                 Text = "Salvar Arquivo",
-                Width = 100
+                Width = 100,
+                Enabled = false
             };
             saveButton.Click += SaveButton_Click;
 
             validateButton = new Button
             {
                 Text = "Validar",
-                Width = 100
+                Width = 100,
+                Enabled = false
             };
             validateButton.Click += ValidateButton_Click;
 
             addWordButton = new Button
             {
                 Text = "Adicionar Palavra",
-                Width = 100
+                Width = 100,
+                Enabled = false
             };
             addWordButton.Click += AddWordButton_Click;
 
             removeWordButton = new Button
             {
                 Text = "Remover Palavra",
-                Width = 100
+                Width = 100,
+                Enabled = false
             };
             removeWordButton.Click += RemoveWordButton_Click;
 
@@ -111,6 +123,7 @@ namespace EditorDeTexto
             if (newWordBox.Text == "Digite a nova palavra")
             {
                 newWordBox.Text = string.Empty;
+                newWordBox.ForeColor = SystemColors.WindowText; // Restaura a cor do texto para preto
             }
         }
 
@@ -119,6 +132,7 @@ namespace EditorDeTexto
             if (string.IsNullOrWhiteSpace(newWordBox.Text))
             {
                 newWordBox.Text = "Digite a nova palavra";
+                newWordBox.ForeColor = SystemColors.GrayText; // Define a cor do texto como cinza
             }
         }
 
@@ -129,29 +143,40 @@ namespace EditorDeTexto
             {
                 string conteudo = editorDeTexto.AbrirArquivo(openFileDialog.FileName);
                 textBox.Text = conteudo;
+                arquivoAberto = true;
+                AtualizarEstadoBotoes();
             }
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
+            if (!arquivoAberto)
+                return;
+
             editorDeTexto.SalvarArquivo(textBox.Text);
+            string conteudoAtualizado = editorDeTexto.ObterConteudo();
+            textBox.Text = conteudoAtualizado;
         }
 
         private void ValidateButton_Click(object sender, EventArgs e)
         {
+            if (!arquivoAberto)
+                return;
+
             editorDeTexto.ValidarTexto(textBox.Text);
         }
 
         private void AddWordButton_Click(object sender, EventArgs e)
         {
             string novaPalavra = newWordBox.Text.Trim();
-            if (!string.IsNullOrEmpty(novaPalavra))
+            if (!string.IsNullOrEmpty(novaPalavra) && novaPalavra != "Digite a nova palavra")
             {
                 if (!editorDeTexto.PalavraExisteNoDicionario(novaPalavra))
                 {
                     editorDeTexto.AdicionarPalavra(novaPalavra);
                     MessageBox.Show($"A palavra '{novaPalavra}' foi adicionada ao dicionário.", "Palavra Adicionada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    newWordBox.Text = "Digite a nova palavra";
+                    newWordBox.Text = string.Empty;
+                    AtualizarPalavrasNoTextBox();
                 }
                 else
                 {
@@ -163,13 +188,14 @@ namespace EditorDeTexto
         private void RemoveWordButton_Click(object sender, EventArgs e)
         {
             string palavra = newWordBox.Text.Trim();
-            if (!string.IsNullOrEmpty(palavra))
+            if (!string.IsNullOrEmpty(palavra) && palavra != "Digite a nova palavra")
             {
                 if (editorDeTexto.PalavraExisteNoDicionario(palavra))
                 {
                     editorDeTexto.RemoverPalavra(palavra);
                     MessageBox.Show($"A palavra '{palavra}' foi removida do dicionário.", "Palavra Removida", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    newWordBox.Text = "Digite a nova palavra";
+                    newWordBox.Text = string.Empty;
+                    AtualizarPalavrasNoTextBox();
                 }
                 else
                 {
@@ -185,7 +211,24 @@ namespace EditorDeTexto
             {
                 editorDeTexto.CriarNovoArquivo(saveFileDialog.FileName);
                 textBox.Text = string.Empty;
+                arquivoAberto = true;
+                AtualizarEstadoBotoes();
             }
+        }
+
+        private void AtualizarEstadoBotoes()
+        {
+            saveButton.Enabled = arquivoAberto;
+            validateButton.Enabled = arquivoAberto;
+            addWordButton.Enabled = arquivoAberto;
+            removeWordButton.Enabled = arquivoAberto;
+            newWordBox.Enabled = arquivoAberto;
+        }
+
+        private void AtualizarPalavrasNoTextBox()
+        {
+            string conteudoAtualizado = editorDeTexto.ObterConteudo();
+            textBox.Text = conteudoAtualizado;
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
