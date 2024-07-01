@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq; // Adicione esta linha para usar o método Any
+using System.Linq;
 using System.Windows.Forms;
 
 namespace EditorDeTexto
 {
+    //Classe responsável por criar a interface gráfica do programa
     public class MainForm : Form
     {
         private RichTextBox textBox;
@@ -24,14 +25,14 @@ namespace EditorDeTexto
 
         public MainForm()
         {
-            editorDeTexto = new EditorDeTexto("dictionary.txt");
-            dicionario = editorDeTexto.ObterDicionario();
+            editorDeTexto = new EditorDeTexto("dictionary.txt"); // Nome do arquivo de dicionário
+            dicionario = editorDeTexto.ObterDicionario(); // Carregar dicionário
 
             textBox = new RichTextBox
             {
                 Multiline = true,
                 Dock = DockStyle.Fill,
-                ReadOnly = false // Permitir edição
+                ReadOnly = false
             };
 
             newWordBox = new TextBox
@@ -134,7 +135,7 @@ namespace EditorDeTexto
             if (newWordBox.Text == "Digite a nova palavra")
             {
                 newWordBox.Text = string.Empty;
-                newWordBox.ForeColor = SystemColors.WindowText; // Restaura a cor do texto para preto
+                newWordBox.ForeColor = SystemColors.WindowText;
             }
         }
 
@@ -143,7 +144,7 @@ namespace EditorDeTexto
             if (string.IsNullOrWhiteSpace(newWordBox.Text))
             {
                 newWordBox.Text = "Digite a nova palavra";
-                newWordBox.ForeColor = SystemColors.GrayText; // Define a cor do texto como cinza
+                newWordBox.ForeColor = SystemColors.GrayText; 
             }
         }
 

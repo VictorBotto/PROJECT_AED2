@@ -1,35 +1,65 @@
 using System.Collections.Generic;
-using System.Linq;
 
 namespace EditorDeTexto
 {
+    // Classe que representa uma tabela hash
     public class TabelaHash
     {
-        private HashSet<string> palavras; // Estrutura de dados para armazenar as palavras únicas
+        private ListaEncadeada[] tabela; // Array de listas encadeadas que vai ser responsável para tratar colisões
+        private int tamanho; // Tamanho da tabela
 
-        public TabelaHash()
+        // Construtor da classe que inicializa a tabela hash
+        public TabelaHash(int tamanho)
         {
-            palavras = new HashSet<string>();
+            this.tamanho = tamanho; 
+            tabela = new ListaEncadeada[tamanho];
+            for (int i = 0; i < tamanho; i++)
+            {
+                tabela[i] = new ListaEncadeada();
+            }
         }
-
+        // Método que gera um índice para a palavra (função HASH)
+        private int GerarIndice(string palavra)
+        {
+            int hash = 0;
+            foreach (char c in palavra)
+            {
+                hash += c;
+            }
+            return hash % tamanho;
+        }
+        // Método que adiciona uma palavra na tabela hash
         public void Adicionar(string palavra)
         {
-            palavras.Add(palavra.ToLower()); // Adiciona a palavra em minúsculas para garantir a unicidade
+            int indice = GerarIndice(palavra);
+            tabela[indice].AdicionarPalavra(palavra);
         }
-
+        // Método que remove uma palavra da tabela hash
         public void Remover(string palavra)
         {
-            palavras.Remove(palavra.ToLower()); // Remove a palavra em minúsculas
+            int indice = GerarIndice(palavra);
+            tabela[indice].RemoverPalavra(palavra);
         }
-
+        // Método que verifica se a palavra está na tabela hash
         public bool Contains(string palavra)
         {
-            return palavras.Contains(palavra.ToLower()); // Verifica se a palavra está presente, ignorando maiúsculas/minúsculas
+            int indice = GerarIndice(palavra);
+            return tabela[indice].Contains(palavra);
         }
-
+        // Método que retorna todas as palavras da tabela hash
         public string[] ObterPalavras()
         {
-            return palavras.ToArray(); // Retorna todas as palavras como um array de strings
+            List<string> todasPalavras = new List<string>();
+            foreach (var lista in tabela)
+            {
+                No atual = lista.Cabeca;
+                while (atual != null)
+                {
+                    todasPalavras.Add(atual.Palavra);
+                    atual = atual.Next;
+                }
+            }
+            return todasPalavras.ToArray();
         }
     }
 }

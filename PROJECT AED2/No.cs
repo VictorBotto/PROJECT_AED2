@@ -2,10 +2,10 @@ namespace EditorDeTexto
 {
     public class No
     {
-        // Propriedade que armazena a palavra do nó
+        // Atributo que armazena a palavra do nó
         public string Palavra { get; set; }
 
-        // Propriedade que armazena a referência para o próximo nó na lista encadeada
+        // Atributo que armazena a referência para o próximo nó na lista encadeada
         public No Next { get; set; }
 
         // Construtor que inicializa o nó com a palavra fornecida

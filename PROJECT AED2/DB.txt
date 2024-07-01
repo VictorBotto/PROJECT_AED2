@@ -3,3 +3,6 @@ Brincar
 Chocalho
 Deitado
 Uva
+Banana
+Macaco
+Laranja
